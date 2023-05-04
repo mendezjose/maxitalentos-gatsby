@@ -7,20 +7,11 @@ import { StaticImage } from 'gatsby-plugin-image'
 const Navigation = () => (
   <nav role="navigation" className={styles.container} aria-label="Main">
     <Link to="/" className={styles.logoLink}>
-      {/* <span className={styles.logo} /> */}
-
       <div style={{ maxWidth: '220px' }}>
         <StaticImage src="../assets/images/max-1.png" />
       </div>
-
-      {/* <span className={styles.navigationItem}>Maxitalentos</span> */}
     </Link>
     <ul className={styles.navigation}>
-      <li className={styles.navigationItem}>
-        <Link to="/" activeClassName="active">
-          Inicio
-        </Link>
-      </li>
       <li className={styles.navigationItem}>
         <Link to="/servicios-personalizados/" activeClassName="active">
           Servicios
