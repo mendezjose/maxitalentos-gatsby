@@ -10,7 +10,7 @@ const Navigation = () => (
       {/* <span className={styles.logo} /> */}
 
       <div style={{ maxWidth: '220px' }}>
-        <StaticImage src="../assets/images/maxitalentos.jpeg" />
+        <StaticImage src="../assets/images/max-1.png" />
       </div>
 
       {/* <span className={styles.navigationItem}>Maxitalentos</span> */}
