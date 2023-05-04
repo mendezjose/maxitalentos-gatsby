@@ -11,8 +11,8 @@ const NotFoundPage = () => (
         alignItems: 'center',
       }}
     >
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <h1>404: Página no encontrada</h1>
+      <p>Lo sentimos, la página que buscas no existe.</p>
     </div>
   </Layout>
 )

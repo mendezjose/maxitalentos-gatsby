@@ -23,20 +23,15 @@ class BlogPostTemplate extends React.Component {
     )
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
-    
+
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { gatsbyImage, description } = node.data.target
-        return (
-           <GatsbyImage
-              image={getImage(gatsbyImage)}
-              alt={description}
-           />
-         )
+          const { gatsbyImage, description } = node.data.target
+          return <GatsbyImage image={getImage(gatsbyImage)} alt={description} />
         },
       },
-    };
+    }
 
     return (
       <Layout location={this.props.location}>
@@ -54,7 +49,7 @@ class BlogPostTemplate extends React.Component {
           <span className={styles.meta}>
             {post.author?.name} &middot;{' '}
             <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
-            {timeToRead} minute read
+            {timeToRead} minutos de lectura
           </span>
           <div className={styles.article}>
             <div className={styles.body}>
@@ -102,7 +97,7 @@ export const pageQuery = graphql`
       author {
         name
       }
-      publishDate(formatString: "MMMM Do, YYYY")
+      publishDate(formatString: "MMMM DD, YYYY", locale: "es")
       rawDate: publishDate
       heroImage {
         gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
@@ -112,7 +107,6 @@ export const pageQuery = graphql`
       }
       body {
         raw
-        
       }
       tags
       description {

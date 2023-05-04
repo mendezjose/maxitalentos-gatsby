@@ -16,6 +16,7 @@
   src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 html {
   scroll-behavior: smooth;
 }
@@ -98,4 +99,8 @@ tt:after {
 pre,
 code {
   font-family: var(--font-monospace);
+}
+
+li p {
+  margin: 0 !important;
 }

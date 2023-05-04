@@ -9,7 +9,7 @@ const Hero = ({ image, title, content }) => (
     {image && (
       <GatsbyImage className={styles.image} alt={title} image={image} />
     )}
-    <div className={styles.details}>
+    <div className={styles.details} style={{ opacity: 0.8 }}>
       <h1 className={styles.title}>{title}</h1>
       {content && (
         <div className={styles.content}>{renderRichText(content)}</div>
