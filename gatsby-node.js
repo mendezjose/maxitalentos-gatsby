@@ -14,7 +14,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             title
             slug
-            type
+          }
+        }
+        allContentfulPage {
+          nodes {
+            title
+            slug
           }
         }
       }
@@ -29,9 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allContentfulBlogPost.nodes.filter(
-    (i) => i.type === 'blogpost'
-  )
+  const posts = result.data.allContentfulBlogPost.nodes
 
   // Create blog posts pages
   // But only if there's at least one blog post found in Contentful
@@ -55,9 +58,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-  const pages = result.data.allContentfulBlogPost.nodes.filter(
-    (i) => i.type === 'webpage'
-  )
+  const pages = result.data.allContentfulPage.nodes
 
   // Create blog posts pages
   // But only if there's at least one blog post found in Contentful

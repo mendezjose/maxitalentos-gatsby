@@ -25,10 +25,7 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allContentfulBlogPost(
-      sort: { publishDate: DESC }
-      filter: { type: { eq: "blogpost" } }
-    ) {
+    allContentfulBlogPost(sort: { publishDate: DESC }) {
       nodes {
         title
         slug

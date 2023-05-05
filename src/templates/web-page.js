@@ -14,7 +14,7 @@ import * as styles from './blog-post.module.css'
 
 class WebPageTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
+    const post = get(this.props, 'data.contentfulPage')
     const plainTextDescription = documentToPlainTextString(
       JSON.parse(post.description.raw)
     )
@@ -51,8 +51,8 @@ class WebPageTemplate extends React.Component {
 export default WebPageTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+  query PageBySlug($slug: String!) {
+    contentfulPage(slug: { eq: $slug }) {
       slug
       title
       heroImage {
