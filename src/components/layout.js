@@ -75,7 +75,7 @@ class Template extends React.Component {
           </Link>
 
           <Link to="/consultoria/" activeClassName="active">
-            Consultoria
+            Consultoría
           </Link>
 
           <Link to="/acerca/" activeClassName="active">
